@@ -1,4 +1,4 @@
-# All 524 Rectors Overview
+# All 525 Rectors Overview
 
 - [Projects](#projects)
 - [General](#general)
@@ -29,7 +29,7 @@
 - [MockeryToProphecy](#mockerytoprophecy) (2)
 - [MockistaToMockery](#mockistatomockery) (2)
 - [MysqlToMysqli](#mysqltomysqli) (4)
-- [Naming](#naming) (2)
+- [Naming](#naming) (3)
 - [Nette](#nette) (12)
 - [NetteCodeQuality](#nettecodequality) (1)
 - [NetteKdyby](#nettekdyby) (4)
@@ -4939,6 +4939,25 @@ Rename property and method param to match its type
      {
 -        $this->eventManager = $eventManager;
 +        $this->entityManager = $entityManager;
+     }
+ }
+```
+
+<br><br>
+
+### `RenameVariableToMatchGetMethodNameRector`
+
+- class: [`Rector\Naming\Rector\MethodCall\RenameVariableToMatchGetMethodNameRector`](/../master/rules/naming/src/Rector/MethodCall/RenameVariableToMatchGetMethodNameRector.php)
+- [test fixtures](/../master/rules/naming/tests/Rector/MethodCall/RenameVariableToMatchGetMethodNameRector/Fixture)
+
+Rename variable to match get method name
+
+```diff
+ class SomeClass {
+     public function run()
+     {
+-        $a = $this->getRunner();
++        $runner = $this->getRunner();
      }
  }
 ```
